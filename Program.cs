@@ -6,9 +6,9 @@
         {
             //Console.WriteLine("Welcome to maximum problem using generics");
 
-            int num1 = 70, num2 = 120, num3 = 100;
+            double num1 = 7.9, num2 = 1.8, num3 = 19.8;
 
-            int value = MaximumNumber.MaximumIntegerNumber(num1, num2, num3);
+            double value = MaximumNumber.MaximumFloatNumber(num1, num2, num3);
 
             Console.WriteLine(value + " is greatest");
         }
