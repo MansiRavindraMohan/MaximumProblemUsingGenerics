@@ -8,29 +8,30 @@ namespace MaximumProblemUsingGenerics
 {
     public class MaximumNumber
     {
-        public static void MaximumString()
-        {
-            string text;
-            string[] stringList;
-            int ni = 0, len, max = 0;
-
-
-            Console.Write("Enter a string :");
-            text = Console.ReadLine();
-            stringList = text.Split(' ');
-            len = stringList.Length;
-
-            for (int i = 0; i < len; i++)
+            public static string FindMaxString(string str1, string str2, string str3)
             {
-                if (stringList[i].Length > max)
+                if (str1.CompareTo(str2) > 0 && str1.CompareTo(str3) > 0 ||
+                    str1.CompareTo(str2) >= 0 && str1.CompareTo(str3) > 0 ||
+                    str1.CompareTo(str2) > 0 && str1.CompareTo(str3) >= 0
+                    )
                 {
-                    max = stringList[i].Length;
-                    ni = i;
+                    return str1;
                 }
+                if (str2.CompareTo(str1) > 0 && str2.CompareTo(str3) > 0 ||
+                    str2.CompareTo(str1) >= 0 && str2.CompareTo(str3) > 0 ||
+                    str2.CompareTo(str1) > 0 && str2.CompareTo(str3) >= 0
+                    )
+                {
+                    return str2;
+                }
+                if (str3.CompareTo(str1) > 0 && str3.CompareTo(str2) > 0 ||
+                    str3.CompareTo(str1) >= 0 && str3.CompareTo(str2) > 0 ||
+                    str3.CompareTo(str1) > 0 && str3.CompareTo(str2) >= 0
+                    )
+                {
+                    return str3;
+                }
+                return str1;
             }
-
-            Console.WriteLine("Longest string:{0} \nCount of longest string:{1}", stringList[ni], max);
-            Console.ReadLine();
-        }
+        }   
     }
-}
