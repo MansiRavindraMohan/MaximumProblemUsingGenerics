@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace MaximumProblemUsingGenerics
 {
-    public class MaximumNumber
+    public class MaximumNumber<T> where T : IComparable
     {
-        public static T FindMaxValue<T>(T value1, T value2, T value3) where T : IComparable
+        public T value1;
+        public T value2;
+        public T value3;
+
+        public MaximumNumber(T value1, T value2, T value3)
+        {
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+        }
+
+        public static T FindMaxValue(T value1, T value2, T value3)
         {
             if (value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 ||
                value1.CompareTo(value2) >= 0 && value1.CompareTo(value3) > 0 ||
